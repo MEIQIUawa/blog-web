@@ -11,4 +11,5 @@ A personal blog website template with a dynamic background that will add more fe
 Visit http://yourIP/ to browse the web
 
 Please watch the instructional video
-[![termux](https://i.ytimg.com/vi/b1csuCsrweA/maxresdefault.jpg)](https://youtu.be/b1csuCsrweA "termux")
+https://github.com/user-attachments/assets/d7da70f4-6102-4be4-9517-564b4c7ec982
+
