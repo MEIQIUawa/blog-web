@@ -1,5 +1,5 @@
 # 博客模板
-<br><a href="https://github.com/MEIQIUawa/blog-web/blob/main/README_zh.md" style="text-decoration: none;">|中文文档|</a></br>
+<br><a href="https://github.com/MEIQIUawa/blog-web/blob/main/README.md" style="text-decoration: none;">|英文文档|</a></br>
 <br>一定要在web环境下运行，直接打开会发生错误！！！</br>
 <br>在<a href="https://github.com/MEIQIUawa/blog-web/releases" style="text-decoration: none;">releases</a>页面下载最新版的压缩包解压到任意目录</br>
 <br>确保您的电脑或服务器安装了nodejs软件,<a href="https://nodejs.org/en/download/package-manager" style="text-decoration: none;">点我</a>前往下载nodejs</br>
