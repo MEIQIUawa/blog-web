@@ -9,3 +9,6 @@
 * windows系统运行run.bat
 
 访问 http://你的IP地址/ 即可浏览网页
+
+请观看教程：
+https://github.com/user-attachments/assets/d7da70f4-6102-4be4-9517-564b4c7ec982
