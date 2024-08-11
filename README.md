@@ -9,3 +9,5 @@ A personal blog website template with a dynamic background that will add more fe
 * Windows system running run.bat
 
 Visit http://yourIP/ to browse the web
+
+Please watch the instructional video
