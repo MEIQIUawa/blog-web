@@ -11,5 +11,7 @@ A personal blog website template with a dynamic background that will add more fe
 Visit http://yourIP/ to browse the web
 
 Please watch the instructional video
-https://github.com/user-attachments/assets/d7da70f4-6102-4be4-9517-564b4c7ec982
+
+
+https://github.com/user-attachments/assets/7c39bf88-f746-40bc-bcb9-e27126f187c0
 
