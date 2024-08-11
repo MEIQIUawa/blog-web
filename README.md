@@ -11,3 +11,4 @@ A personal blog website template with a dynamic background that will add more fe
 Visit http://yourIP/ to browse the web
 
 Please watch the instructional video
+<iframe width="664" height="748" src="https://www.youtube.com/embed/b1csuCsrweA" title="termux" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
