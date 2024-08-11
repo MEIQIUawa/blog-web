@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xx's Blog</title>
+    <link rel="icon" href="img/mycloud.ico">
+    <style>
+
+        @font-face {
+          font-family: 'Aaohmygod';  // 定义字体名
+          src: url('font/Aaohmygod被你萌化啦.woff') format('woff'),  // 字体文件路径和格式
+          font-weight: normal;  // 字体粗细
+          font-style: normal;  // 字体风格
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Aaohmygod', sans-serif;  // 网页全局字体设置
+        }
+
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        header {
+            border-radius: 10px; /* 圆角边框 */
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.6); /* 背景颜色和透明度 */
+            border: 1px solid rgba(0, 0, 0, 0.5); /* 边框透明度 */
+            width: 70%;
+            margin: 40px auto;
+            display: flex;
+            /*align-items: center;*/
+            position: relative;
+        }
+
+        header a {
+            margin: 0 20px; /* 间隔像素 */
+            text-decoration: none;
+            color: #000; /* 超链接颜色 */
+            font-size: 24px;
+        }
+
+        .github-icon {
+            width: 24px; /* GitHub图标宽度 */
+            height: 24px; /* GitHub图标高度 */
+            vertical-align: middle; /* 图标垂直对齐 */
+            margin-left: 5px; /* 图标与文本间隔 */
+        }
+
+        .right-align {
+          width: 15%;
+          float: right;
+        }
+
+        .content {
+            width: 70%;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.3); /* 主体背景颜色和透明度 */
+            padding: 10px;
+            border-radius: 5px;
+            overflow: auto; /* 添加滚动条以防止溢出 */
+        }
+
+        .file-div {
+            margin-bottom: 10px; /* 上下间距为10px */
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.8); /* 文件内容的背景颜色 */
+            border-radius: 5px;
+        }
+
+        .pagination {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .pagination button {
+            margin: 0 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+       .c23228 {
+          width: 24px;
+          height: 24px;
+       }
+    </style>
+    <style type="text/css">
+#popDiv {
+    text-align: center;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.8); /* 白色背景，80%透明度 */
+    border-radius: 10px; /* 圆角边框 */
+    z-index: 11;
+    width: 600px;
+    /*height: 300px; */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 居中显示 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 轻微的阴影效果 */
+    padding: 20px; /* 内边距，使内容与边框保持一定距离 */
+    max-height: 60vh; /* 设置最大高度为视窗高度的80% */
+    overflow-y: auto; /* 如果内容超出，显示垂直滚动条 */
+    overflow-x: hidden; /* 隐藏水平滚动条 */
+}
+
+@media screen and (max-width: 768px) {
+    #popDiv {
+        width: 70%; /* 手机模式下宽度设置为70% */
+    }
+}
+
+/* 关闭按钮容器样式 */
+#popDiv .close {
+    position: absolute; /* 绝对定位，相对于弹出窗口定位 */
+    top: 10px; /* 距离顶部10px */
+    right: 10px; /* 距离右侧10px */
+    cursor: pointer; /* 鼠标悬停时显示手形光标 */
+}
+
+/* 关闭按钮链接样式 */
+#popDiv .close a {
+    text-decoration: none;
+    color: #333; /* 文字颜色 */
+    font-weight: bold; /* 字体加粗 */
+    font-size: 20px; /* 字体大小 */
+    display: block; /* 使链接成为一个块级元素 */
+    width: 30px; /* 按钮宽度 */
+    height: 30px; /* 按钮高度 */
+    line-height: 30px; /* 行高与按钮高度一致，使文字垂直居中 */
+    text-align: center; /* 文字水平居中 */
+    background-color: #f1f1f1; /* 按钮背景色 */
+    border-radius: 50%; /* 按钮圆角 */
+    border: 1px solid #ccc; /* 按钮边框 */
+    position: relative; /* 相对定位，用于伪元素定位 */
+}
+
+/* 使用伪元素创建“X”形状 */
+#popDiv .close a:before,
+#popDiv .close a:after {
+    content: ''; /* 必须设置content属性 */
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin-top: -1px; /* 居中调整 */
+    width: 100%; /* 线条宽度 */
+    height: 2px; /* 线条高度 */
+    background-color: #333;
+    transform: rotate(45deg);
+}
+
+#popDiv .close a:before {
+    transform: rotate(-45deg);
+}
+
+/* 鼠标悬停时的样式变化 */
+#popDiv .close a:hover {
+    background-color: #e0e0e0; /* 鼠标悬停时的背景色 */
+}
+
+        #popDiv p{
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+#popDiv::-webkit-scrollbar {
+    width: 12px; /* 滚动条的宽度 */
+}
+
+#popDiv::-webkit-scrollbar-track {
+    background-color: #f5f5f5; /* 滚动条轨道的颜色 */
+}
+
+#popDiv::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1; /* 滚动条滑块的颜色 */
+    border-radius: 6px; /* 滑块的圆角 */
+}
+
+/* 对于Firefox浏览器： */
+#popDiv {
+    scrollbar-width: thin; /* 设置滚动条宽度 */
+    scrollbar-color: #c1c1c1 #f5f5f5; /* 设置滚动条滑块和轨道的颜色 */
+}
+
+#pay {
+    width: 200px;
+}
+
+@media screen and (max-width: 768px) {
+    #pay {
+        width: 100%; 
+    }
+}
+    </style>
+</head>
+<body>
+    <video autoplay muted loop id="background-video">
+        <source src="video/001.mp4" type="video/mp4">
+    </video>
+    <header id="awd-site-header">
+        <nav>
+            <a href="/"><img src="img/logo.png" style="width: 160px;"/></a>
+            <a href="/" >首页</a>
+            <a href="https://github.com/MEIQIUawa/blog-web" target="_blank">
+                <img class="github-icon" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Icon">
+                GitHub
+            </a>
+        </nav>
+      <script src="https://myhkw.cn/player/js/jquery.min.js" type="text/javascript"></script>
+    </header>
+<div style="margin-top: 80px;">
+    <div class="content" id="content"></div>
+    <div class="pagination" id="pagination"></div>
+</div>
+<div id="popDiv">
+    <div class="close">
+        <a href="javascript:void(0)" onclick="closePop()"></a>
+    </div>
+       <div style="font-size: 24px;">
+          请及时更改弹窗
+    </div>
+</div>
+    <script>
+        const filesPerPage = 4; // 每页显示的文件数量
+        let currentPage = 1;
+        const totalFiles = []; // 存储文件信息
+        const contentDiv = document.getElementById('content');
+        const paginationDiv = document.getElementById('pagination');
+
+        // 模拟读取文件及其修改时间
+        function loadFiles() {
+            // 这里替换为你自己读取文件的逻辑，例如从服务器获取文件列表
+            // 模拟文件名和修改时间
+            totalFiles.push({ name: "list/header.html", modified: new Date('9999-09-09') });
+            totalFiles.push({ name: "list/001.html", modified: new Date('2024-08-10') });
+            totalFiles.push({ name: "list/404.html", modified: new Date('2020-01-01') });
+
+            // 按修改时间排序
+            totalFiles.sort((a, b) => b.modified - a.modified);
+            renderPage(currentPage);
+        }
+
+        // 渲染指定页面
+        function renderPage(page) {
+            contentDiv.innerHTML = ""; // 清空内容
+            const start = (page - 1) * filesPerPage;
+            const end = start + filesPerPage;
+            const filesToDisplay = totalFiles.slice(start, end);
+    
+            filesToDisplay.forEach(file => {
+                const fileDiv = document.createElement('div');
+                fileDiv.classList.add('file-div'); // 添加样式类
+                loadFileContent(file.name, fileDiv); // 加载文件内容到指定的 div
+                contentDiv.appendChild(fileDiv);
+            });
+    
+            renderPagination(page);
+        }
+
+        // 加载文件内容
+        function loadFileContent(fileName, fileDiv) {
+            // 使用 AJAX 请求文件内容
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', fileName, true);
+            xhr.onload = function() {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    fileDiv.innerHTML = xhr.responseText; // 显示文件内容
+                } else {
+                    fileDiv.innerHTML = '<div style="text-align: center;"><p>404 NotFound</p><hr/><p>NodeJS</p></div>';
+                }
+            };
+            xhr.onerror = function() {
+                fileDiv.innerHTML = '<p style="color:red;">请求出现错误。</p>';
+            };
+            xhr.send();
+        }
+
+        // 渲染分页按钮
+        function renderPagination(page) {
+            paginationDiv.innerHTML = ""; // 清空分页
+            const totalPages = Math.ceil(totalFiles.length / filesPerPage);
+    
+            for (let i = 1; i <= totalPages; i++) {
+                const button = document.createElement('button');
+                button.textContent = i;
+                button.disabled = (i === page);
+                button.onclick = () => {
+                    currentPage = i;
+                    renderPage(currentPage);
+                };
+                paginationDiv.appendChild(button);
+            }
+        }
+
+        // 页面加载时执行
+        document.addEventListener("DOMContentLoaded", loadFiles);
+     </script>
+<script src="https://myhkw.cn/api/player/demo" id="myhk" key="demo" skin="pinkcat" lr="l" m="1"></script>
+<script type="text/javascript">
+! function (e, t, a) {
+function r() {
+for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[
+e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x +
+"px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e]
+.scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+requestAnimationFrame(r)
+}
+function n() {
+var t = "function" == typeof e.onclick && e.onclick;
+e.onclick = function (e) {
+t && t(), o(e)
+}
+}
+function o(e) {
+var a = t.createElement("div");
+a.className = "heart", s.push({
+el: a,
+x: e.clientX - 5,
+y: e.clientY - 5,
+scale: 1,
+alpha: 1,
+color: c()
+}), t.body.appendChild(a)
+}
+function i(e) {
+var a = t.createElement("style");
+a.type = "text/css";
+try {
+a.appendChild(t.createTextNode(e))
+} catch (t) {
+a.styleSheet.cssText = e
+}
+t.getElementsByTagName("head")[0].appendChild(a)
+}
+function c() {
+return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math
+.random()) + ")"
+}
+var s = [];
+e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e
+.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) {
+setTimeout(e, 1e3 / 60)
+}, i(
+".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"
+), n(), r()
+}(window, document);
+</script>
+    <script type="text/javascript">
+        // 当页面加载完成时自动调用popDiv函数
+        window.onload = function() {
+            popDiv();
+        };
+
+        function popDiv() {
+            // 获取div元素
+            var popDiv = document.getElementById("popDiv");
+
+            // 显示弹出窗口
+            popDiv.style.display = "block";
+        }
+
+        function closePop() {
+            // 获取弹出窗口元素
+            var popDiv = document.getElementById("popDiv");
+
+            // 隐藏弹出窗口
+            popDiv.style.display = "none";
+        }
+    </script>
+</body>
+</html>
