@@ -8,4 +8,4 @@ A personal blog website template with a dynamic background that will add more fe
 * linux系统运行run.sh
 * windows系统运行run.bat
 
-<br>访问"http://你的IP地址/"即可浏览网页</br>
+访问"http://你的IP地址/"即可浏览网页
