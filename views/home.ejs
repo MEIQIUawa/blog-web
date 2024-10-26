@@ -1,0 +1,62 @@
+<style>
+/* 让 div 元素固定在页面顶部，不干扰其他元素 */
+.transparent-div {
+    position: fixed; /* 固定位置 */
+    top: 20px; /* 距离页面顶部的距离 */
+    left: 50%;
+    transform: translateX(-50%); /* 水平居中 */
+    width: 250px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.6); /* 半透明效果 */
+    border-radius: 20px; /* 圆角 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.text-container {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInOut 3s infinite; /* 动画效果 */
+}
+
+/* 文字淡入淡出效果 */
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+    </style>
+</head>
+
+<body>
+<div class="transparent-div">
+    <div class="text-container" id="text-container">欢迎来到博客后台管理系统</div>
+</div>
+    <script>
+    const textContainer = document.getElementById('text-container');
+const texts = ["欢迎来到博客后台管理系统", "请遵循以下条例：", "1.禁止出售或转卖本系统", "2.禁止删除版权声明", "3.不要向他人提供后台发送的验证码", "祝您愉快", "made by meiqiu"]; // 要切换的文本
+let index = 0;
+
+function switchText() {
+    textContainer.style.opacity = '0'; // 淡出效果
+    setTimeout(() => {
+        index = (index + 1) % texts.length;
+        textContainer.textContent = texts[index];
+        textContainer.style.opacity = '1'; // 淡入效果
+    }, 500); // 与CSS中的动画时间保持一致
+}
+
+// 每5秒切换一次文本
+setInterval(switchText, 3000);
+</script>
+</body>
