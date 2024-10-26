@@ -1,0 +1,22 @@
+
+.music-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-image: url('/img/music.png'); /* 替换为你的背景图片 */
+    background-size: cover;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.rotate {
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
