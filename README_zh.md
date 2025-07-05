@@ -1,18 +1,36 @@
-# 博客模板
-具有动态背景的个人博客网站模板，将在未来添加更多功能 #蔚蓝档案
-<br><a href="https://github.com/MEIQIUawa/blog-web/blob/main/README.md" style="text-decoration: none;">|英文文档|</a></br>
-<br>一定要在web环境下运行，直接打开会发生错误！！！</br>
-<br>在<a href="https://github.com/MEIQIUawa/blog-web/releases" style="text-decoration: none;">releases</a>页面下载最新版的压缩包解压到任意目录</br>
-<br>确保您的电脑或服务器安装了nodejs软件,<a href="https://nodejs.org/en/download/package-manager" style="text-decoration: none;">点我</a>前往下载nodejs</br>
-<br>下载后运行脚本<br>
-* linux系统运行run.sh
-* windows系统运行run.bat
+# blog-web
 
-访问 http://你的IP地址/ 即可浏览网页
+## 个人博客网站模板
 
-请观看教程：
+一个使用视频动态壁纸的个人博客网站模板，适用于静态网页部署。
 
+## 项目特点
 
-https://github.com/user-attachments/assets/ed2aafb5-c2ae-4924-a06f-a008e127cdbe
+- **轻量级**：使用 Vue 实现纯 HTML + JS + CSS，无需后端支持。
+- **动态背景**：支持视频动态壁纸，为博客增添独特视觉效果。
+- **易于部署**：直接部署到静态服务器即可，例如 GitHub Pages。
 
+## 使用方法
 
+1. **下载项目**
+   - 在 [releases 页面](https://github.com/MEIQIUawa/blog-web/releases) 下载最新版的压缩包。
+   - 解压到任意目录。
+
+2. **部署到静态服务器**
+   - 将解压后的文件夹上传到支持静态网站的服务器，例如 [GitHub Pages](https://pages.github.com/)。
+   - 访问 `https://你的用户名.github.io/你的项目名` 即可浏览网页。
+
+## 注意事项
+
+- 请确保在 Web 环境下运行，直接打开 HTML 文件可能会导致功能异常。
+- 如果需要自定义视频壁纸，请将视频文件替换为您的视频，并确保格式支持。
+
+## 更新日志
+
+- **2024-10**：重构项目结构，优化代码，移除对 Node.js 和 PHP 的依赖。
+- **2024-05**：添加视频动态壁纸功能。
+- **2024-02**：初始版本发布。
+
+## 联系方式
+
+如有任何问题或建议，请通过 [GitHub Issues](https://github.com/MEIQIUawa/blog-web/issues) 提交反馈。
