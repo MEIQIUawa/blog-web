@@ -1,17 +1,36 @@
 # blog-web
-A personal blog website template with a dynamic background that will add more features in the future #Blue archive
-<br><a href="https://github.com/MEIQIUawa/blog-web/blob/main/README_zh.md" style="text-decoration: none;">|中文文档|</a></br>
-<br>Be sure to run it in a web environment, an error will occur when you open it directly!!!</br>
-<br>Download the latest version of the archive on the <a href="https://github.com/MEIQIUawa/blog-web/releases" style="text-decoration: none;">releases</a> page and extract it to any directory</br>
-<br>Make sure your computer or server has nodejs software installed,<a href="https://nodejs.org/en/download/package-manager" style="text-decoration: none;">Click me</a> to download nodejs</br>
-<br>Run the script after downloading<br>
-* The Linux system runs run.sh
-* Windows system running run.bat
 
-Visit http://yourIP/ to browse the web
+## Personal Blog Template
 
-Please watch the instructional video
+A personal blog template with video dynamic wallpapers, designed for static web deployment.<br>
+<a href="https://github.com/MEIQIUawa/blog-web/blob/main/README_zh.md" style="text-decoration: none;">|中文文档|</a>
+## Features
 
+- **Lightweight**: Implemented using pure HTML + JS + CSS with Vue.js. No backend support required.
+- **Dynamic Background**: Supports video wallpapers to add a unique visual effect to your blog.
+- **Easy Deployment**: Simply deploy to a static web server like GitHub Pages.
 
-https://github.com/user-attachments/assets/7c39bf88-f746-40bc-bcb9-e27126f187c0
+## How to Use
 
+1. **Download the Project**
+   - Download the latest release package from the [releases page](https://github.com/MEIQIUawa/blog-web/releases).
+   - Extract the files to any directory.
+
+2. **Deploy to a Static Server**
+   - Upload the extracted folder to a static web server, such as [GitHub Pages](https://pages.github.com).
+   - Visit `https://your-username.github.io/your-project-name` to view your blog.
+
+## Notes
+
+- Ensure that you run the project in a web environment. Opening the HTML file directly may cause errors.
+- If you want to customize the video wallpaper, replace the video file with your own video and ensure the format is supported.
+
+## Update Log
+
+- **2024-10**: Restructured the project, optimized the code, and removed dependencies on Node.js and PHP.
+- **2024-05**: Added video dynamic wallpaper feature.
+- **2024-02**: Initial release.
+
+## Contact
+
+If you have any questions or suggestions, please submit feedback through [GitHub Issues](https://github.com/MEIQIUawa/blog-web/issues).
